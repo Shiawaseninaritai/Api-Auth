@@ -1,0 +1,1 @@
+CompileDaemon -command="./Api-Auth -my-options"
