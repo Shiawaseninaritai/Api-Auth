@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/Shiawaseninaritai/Api-Auth/controllers"
 	"github.com/Shiawaseninaritai/Api-Auth/initializers"
+	"github.com/Shiawaseninaritai/Api-Auth/middleware"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,5 +17,7 @@ func main() {
 	r := gin.Default()
 	r.POST("/signup", controllers.Signup)
 	r.POST("/login", controllers.Login)
+	r.POST("/validate", middleware.RequireAuth, controllers.Validate)
 	r.Run()
+
 }
